@@ -11,7 +11,8 @@
   "author": "william-knight",
   "license": "ISC",
   "devDependencies": {
-    "lite-server": "^2.6.1"
+    "lite-server": "^2.6.1",
+    "node-sass": "^7.0.1"
   },
   "dependencies": {
     "bootstrap": "^4.5.2",
