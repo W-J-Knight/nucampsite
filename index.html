@@ -202,14 +202,11 @@
                         <span class="carousel-control-next-icon"></span>
                         <span class="sr-only">Next</span>
                     </a>
-                    <!-- Week4 Bootstrap jQuery Part 1 -->
+                    <!-- Week4 Bootstrap jQuery Part 2 -->
+                    <!-- going down just one button and toogle between play and puase -->
                     <!-- the jQuery for this button is at bottom of this html file -->
-                    <div class="btn-group" id="carouselButton">
-                        <button class="btn btn-danger btn-sm" id="carouselPause">
+                        <button class="btn btn-danger btn-sm" id="carouselButton">
                             <i class="fa fa-pause"></i>
-                        </button>
-                        <button  class="btn btn-danger btn-sm" id="carouselPlay">
-                            <i class="fa fa-play"></i>
                         </button>
                     </div>
                 </div>
@@ -312,11 +309,16 @@
     <script>
         $(function() {
             $(".carousel").carousel( { interval: 2000 } );
-            $("#carouselPause").click(function(){
-                $(".carousel").carousel("pause");
-            });
-            $("#carouselPlay").click(function(){
-                $(".carousel").carousel("cycle");
+            $("#carouselButton").click(function(){
+                if ($("#carouselButton").children("i").hasClass("fa-pause")) {
+                    $(".carousel").carousel("pause");
+                    $("#carouselButton").children("i").removeClass("fa-pause");
+                    $("#carouselButton").children("i").addClass("fa-play");
+                } else {
+                    $(".carousel").carousel("cycle");
+                    $("#carouselButton").children("i").removeClass("fa-play");
+                    $("#carouselButton").children("i").addClass("fa-pause"); 
+                }
             });
         });
     </script>
